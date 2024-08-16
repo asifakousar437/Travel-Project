@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages Backup</title>
+    <link rel="stylesheet" href="TSlider.css">
+    <link rel="stylesheet" href="na.css">
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        .sidenav{
+            display:none;
+        }
+        .header{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            height:80px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+            z-index: 1000;
+        }
+        .left-section{
+            margin-left:30px;
+        }
+        .left-section h1{
+            font-size:30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .left-section span{
+            color:green;
+        }
+        .right-section{
+            margin-right:30px;
+            display:flex;
+            gap:80px;
+        }
+        .right-section a{
+            text-decoration: none;
+            color:black;
+            font-size:20px;
+        }
+        .right-section .btn{
+            border:none;
+            padding:8px 30px 8px 30px;
+            border-radius: 20px;
+            margin-top:-8px;
+            background-color: green;
+            color:white;
+            cursor: pointer;
+        }
+        .right-section .btn:hover{
+            border:1px solid green;
+            color:green;
+            background-color: whitesmoke;
+        }
+
+        .text h1{
+            text-transform: uppercase;
+        }
+
+        .heading1 h5{
+            margin-top:10%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color:green;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .heading1 h1{
+            font-size: 50px;
+            text-align: center;
+            text-transform: capitalize;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container img{
+            width:100%;
+        }
+        .container{
+            background-color: white;
+            padding:10px;
+            border-radius: 5px;
+            cursor: pointer;
+            height:90%;
+        }
+        .container:hover{
+            box-shadow: 0px 0px 5px;
+            transform: scale(1.1);
+            transition: 0.3s ease-in-out;
+        }
+        .flex1{
+            display:flex;
+            justify-content: space-between;
+            font-size: 20px;
+            color:rgb(49, 49, 49);
+            margin-bottom:2%;
+        }
+        .anchor a{
+            font-size: 25px;
+            text-decoration: none;
+            color:black;
+        }
+        .flex2{
+            display:flex;
+            justify-content: space-between;
+            font-size: 20px;
+            margin-top:-3%;
+        }
+        .d-text{
+            margin-top:2%;
+        }
+        .package-grid{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap:50px;
+            row-gap: 50px;
+            margin-left:10%;
+            margin-right:10%;
+            margin-top:3%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container1{
+            background-color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            height:90%;
+            position: relative;
+        }
+        .container1:hover{
+            box-shadow: 0px 0px 5px;
+            transform: scale(1.01);
+            transition: 0.3s ease-in-out;
+        }
+        .container1 img{
+            width:100%;
+            height:80%;
+        }
+        .container1 h2{
+            font-size: 25px;
+            color:green;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .container1 .blog-date{
+            border:1px solid green;
+            width:fit-content;
+            padding:10px;
+            font-size:20px;
+            background-color: green;
+            color:white;
+            position: absolute;
+            top:10px;
+        }
+        .blog-date h5{
+            margin-top:-1%;
+            margin-bottom:-3%;
+            text-transform: uppercase;
+        }
+        .blog-grid{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap:50px;
+            row-gap: 10px;
+            margin-left:10%;
+            margin-right:10%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        footer{
+            width:101.1%;
+            height:65vh;
+            margin-left:-0.6%;
+            margin-top:20%;
+            background-color: rgba(0, 0, 0, 0.911);
+            margin-bottom:-10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .footer{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .first-section{
+            margin-left:10%;
+            margin-top:10%;
+            color:white;
+        }
+        .first-section h1{
+            font-size:30px;
+            text-transform: uppercase;
+        }
+        .first-section h3{
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+        .second-section{
+            margin-top:10%;
+        }
+        .second-section h3{
+            font-size: 20px;
+            color:white;
+            text-transform: capitalize;
+        }
+        .second-section a{
+            display:flex;
+            flex-direction:column;
+            margin-bottom: 2%;
+            font-size: 20px;
+            margin-left:2%;
+            text-decoration: none;
+            color:gray;
+            cursor: pointer;
+        }
+        .third-section{
+            margin-top:10%;
+        }
+        .third-section h3{
+            font-size:20px;
+            color:white;
+            text-transform: capitalize;
+        }
+        .third-section div{
+            font-size:20px;
+            color:gray;
+            margin-bottom:5%;
+        }
+        .fourth-section{
+            margin-top:10%;
+        }
+        .flex{
+            display:flex;
+        }
+        .fourth-section h3{
+            font-size:20px;
+            color:white;
+            text-transform: capitalize;
+        }
+        .fourth-section input{
+            height:36px;
+            width:250px;
+        }
+        .fourth-section input::placeholder{
+            font-size: 18px;
+        }
+        .fourth-section button{
+            height:41px;
+            width:80px;
+            font-size: 18px;
+            text-transform: capitalize;
+            background-color: green;
+            color:white;
+            border:none;
+            cursor: pointer;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        footer .end{
+            margin-left:20px;
+            color:gray;
+            font-size: 20px;
+            margin-top:1.5%;
+        }
+        footer hr{
+            border:1px solid rgba(128, 128, 128, 0.559);
+            margin-top:10%;
+        }
+
+        @media screen and (max-width:1200px){
+            .sidenav div .btn{
+                border:none;
+                background-color: green;
+                color:white;
+                cursor: pointer;
+            }
+            .right-section{
+                display:none;
+            }
+            .sidenav {
+                display:block;
+                height:800%;
+                width: 450px;
+                position: absolute;
+                z-index: 1;
+                top:80px;
+                right:-500px;
+                background-color:whitesmoke;
+                overflow-x: hidden;
+                padding-top: 20px;
+                border-radius: 0px;
+            }
+            /* Style the sidenav links and the dropdown button */
+            .sidenav a{
+                padding: 6px 8px 6px 16px;
+                margin-bottom:15px;
+                text-decoration: none;
+                font-size: 20px;
+                color: black;
+                display: block;
+                border: none;
+                background: none;
+                width:100%;
+                text-align: left;
+                cursor: pointer;
+                outline: none;
+            }
+
+            /* On mouse-over */
+            .sidenav a:hover{
+                color: black;
+                background-color: rgba(128, 128, 128, 0.223);
+                border-radius: 5px;
+            }
+            .sidenav.active{
+                right:0;
+                background-color:whitesmoke;
+                color: black;
+            }
+            .lines.open #bar1{
+                background-color: gray;
+                transform: rotate(45deg) translate(6px, 5px);
+            }
+            .lines.open #bar2{
+                background-color: transparent;
+            }
+            .lines.open #bar3{
+                background-color: gray;
+                transform: rotate(-45deg) translate(6px, -5px);
+            }
+            .lines, .bar{
+                position:fixed;
+            }
+            .lines{
+                display:block;
+                top:0.5%;
+                left:92%;
+                right:0px;
+                width:30px;
+                height:30px;
+                transform: translateY(50%);
+                border:0;
+                background: 0 0;
+                margin-right:10px;
+                cursor: pointer;
+            }
+            .bar{
+                top:8px;
+                background: gray;
+                width:100%;
+                height:4px;
+                transition: all .3s ease-in;
+                right:0px;
+            }
+            #bar2{
+                top:16px;
+            }
+            #bar3{
+                top:24px;
+            }
+        }
+
+        @media screen and (max-width:500px){
+            .sidenav{
+                width:375px;
+                border-radius: 0px;
+            }
+
+            .package-grid{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .blog-grid{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            footer{
+                height:130vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+
+        @media (min-width:501px) and (max-width:600px){
+            .sidenav{
+                width:450px;
+                border-radius: 0px;
+            }
+
+            .package-grid{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .blog-grid{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            footer{
+                height:138vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+
+        @media (min-width:601px) and (max-width:800px){
+            .sidenav{
+                width:450px;
+                border-radius: 0px;
+            }
+
+            .package-grid{
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-grid{
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            footer{
+                height:160vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+
+        @media (min-width:801px) and (max-width:1000px){
+            .sidenav{
+                width:450px;
+                border-radius: 0px;
+            }
+
+            .package-grid{
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-grid{
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            footer{
+                height:90vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="left-section">
+                <h1>travel<span>er</span></h1>
+            </div>
+            <div class="right-section">
+                <a href="Homebackup.html">Home</a>
+                <a href="Aboutbackup.html">About</a>
+                <a href="Servicesbackup.html">Services</a>
+                <a href="Packagesbackup.html">Packages</a>
+                <a href="Reviewbackup.html">Review</a>
+                <a href="Register.html" class="btn">Register</a>
+            </div>
+            <div class="sidenav">
+                <button class="lines" onclick="show()">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                </button>
+                <div>
+                    <a href="Homebackup.html">Home</a>
+                    <a href="Aboutbackup.html">About</a>
+                    <a href="Servicesbackup.html">Services</a>
+                    <a href="Packagesbackup.html">Packages</a>
+                    <a href="Reviewbackup.html">Review</a>
+                    <a href="Register.html" class="btn">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="slideshow-container">
+            <div class="items mySlides fade">
+                <img src="Img/carousel-1.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>Packages</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+            <div class="items mySlides fade">
+                <img src="Img/pexels-quang-nguyen-vinh-2166711.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>Packages</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+      
+            <div class="items mySlides fade">
+                <img src="Img/pexels-pedro-slinger-14743568.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>Packages</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+            <div class="items mySlides fade">
+                <img src="Img/pexels-aleksandar-pasaric-2341830.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>Packages</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+            <a class="prev" onclick="prev()">&#10094;</a>
+            <a class="next" onclick="next()">&#10095;</a>
+        </div>
+    </main>
+    <div class="package-container">
+        <div class="heading1">
+            <h5>packages</h5>
+            <h1>tour packages</h1>
+        </div>
+        <div class="package-grid">
+            <div class="container">
+                <img src="Img/package-1.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/about-1.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/package-1 copy.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/package-2 copy.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/package-3 copy.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/package-4.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/packege-1.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/packege-2.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="Img/packege-3.jpg" alt="">
+                <div class="d-text">
+                    <div class="flex1">
+                        <small>Thailand</small>
+                        <small>3 days</small>
+                        <small>2 Person</small>
+                    </div>
+                    <div class="anchor">
+                        <a href="#">Discover amazing places of the world with us</a>
+                    </div>
+                    <div class="flex2">
+                        <h6>4.5 <small>(250)</small></h6>
+                        <h5>$350</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-container">
+        <div class="heading1">
+            <h1>tours & travel blogs</h1>
+        </div>
+        <div class="blog-grid">
+            <div class="container1">
+                <img src="Img/popular-1.jpg">
+                <div class="blog-date">
+                    <h5>01 jan</h5>
+                </div>
+                <h2>admin | tours & travel</h2>
+            </div>
+            <div class="container1">
+                <img src="Img/popular-2.jpg">
+                <div class="blog-date">
+                    <h5>01 jan</h5>
+                </div>
+                <h2>admin | tours & travel</h2>
+            </div>
+            <div class="container1">
+                <img src="Img/popular-3.jpg">
+                <div class="blog-date">
+                    <h5>01 jan</h5>
+                </div>
+                <h2>admin | tours & travel</h2>
+            </div>
+            <div class="container1">
+                <img src="Img/img8.jpg">
+                <div class="blog-date">
+                    <h5>01 jan</h5>
+                </div>
+                <h2>admin | tours & travel</h2>
+            </div>
+            <div class="container1">
+                <img src="Img/img9.jpg">
+                <div class="blog-date">
+                    <h5>01 jan</h5>
+                </div>
+                <h2>admin | tours & travel</h2>
+            </div>
+            <div class="container1">
+                <img src="Img/mountaineer-couple-nanos-plateau-slovenia-looking-beautiful-vipava-valley_181624-30938.png">
+                <div class="blog-date">
+                    <h5>01 jan</h5>
+                </div>
+                <h2>admin | tours & travel</h2>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="first-section">
+                <h1>traveler</h1>
+                <h3>follow us</h3>
+            </div>
+            <div class="second-section">
+                <h3>useful links</h3>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Packages</a>
+                <a href="">Contact</a>
+            </div>
+            <div class="third-section">
+                <h3>Contact Us</h3>
+                <div>123 Street, New York, USA</div>
+                <div>+012 345 67890</div>
+                <div>traveler@gmail.com</div>
+            </div>
+            <div class="fourth-section">
+                <h3>newsletter</h3>
+                <div class="flex">
+                    <input type="email" placeholder="Your Email">
+                    <button>signup</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="end">Copyright © Domain. All Rights Reserved.</div>
+    </footer>
+</body>
+<script>
+    function show(){
+        document.querySelector('.lines').classList.toggle('open')
+        document.querySelector('.sidenav').classList.toggle('active')
+    }
+    function booking(){
+        window.location.href = "Booknow.html";
+    }
+</script>
+<script src="TSlider.js"></script>
+<script src="na.js"></script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .reg-container{
+            width:40%;
+            display:grid;
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 30px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: white;
+            margin:90px auto;
+        }
+        .reg-container input{
+            width:80%;
+            height:40px;
+            border-radius: 5px;
+            border:1px solid gray;
+            font-size: 18px;
+        }
+        .reg-container p{
+            font-size: 18px;
+            margin-top:-5%;
+            margin-bottom:5%;
+        }
+        .reg-container p span{
+            color:green;
+            cursor: pointer;
+        }
+        .reg-container input::placeholder{
+            color:gray;
+            font-size:18px;
+        }
+        .reg-container button{
+            width:80%;
+            height:50px;
+            font-size: 18px;
+            color:white;
+            background-color: green;
+            border:none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom:5%;
+        }
+        .box{
+            width:100%;
+            text-align: center;
+            background-color: green;
+            color:white;
+        }
+
+        .lines, .bar{
+            position:fixed;
+        }
+        .lines{
+            display:block;
+            top:0.5%;
+            left:92%;
+            right:0px;
+            width:30px;
+            height:30px;
+            transform: translateY(50%);
+            border:0;
+            background: 0 0;
+            margin-right:10px;
+            cursor: pointer;
+        }
+        .bar{
+            top:8px;
+            background: gray;
+            width:100%;
+            height:4px;
+            transition: all .3s ease-in;
+            right:0px;
+        }
+        #bar1{
+            transform: rotate(45deg) translate(6px, 5px);
+        }
+        #bar3{
+            transform: rotate(-45deg) translate(6px, -5px);
+            top:24px;
+        }
+        #bar2{
+            background-color: transparent;
+            top:16px;
+        }
+
+        @media screen and (max-width:600px){
+            .reg-container{
+                width:80%;
+            }
+        }
+        @media (min-width:601px) and (max-width:1000px){
+            .reg-container{
+                width:60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="x-btn">
+        <button class="lines" onclick="show()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </button>
+    </div>
+    <div class="reg-container" id="form">
+        <div class="box">
+            <h1>Sign Up Now</h1>
+        </div>
+        <div>
+            <input type="text" placeholder="Your Name" id="card1">
+        </div>
+        <div>
+            <input type="email" placeholder="Your Email" id="card2">
+        </div>
+        <div>
+            <input type="password" placeholder="Create Password" id="card3">
+        </div>
+        <div>
+            <input type="password" placeholder="Confrim Password" id="card3">
+        </div>
+        <div>
+            <button id="btn">Sign Up Now</button>
+        </div>
+        <p>Already Have An Account | <span onclick="signin()">Sign In</span></p>
+    </div>
+</body>
+<script>
+    function show(){
+        window.location.href = "Homebackup.html";
+    }
+    function signin(){
+        window.location.href = "Signin.html";
+    }
+
+    let form = document.getElementById("form");
+    let btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function () {
+        
+        let card1 = document.getElementById("card1").value;
+        let card2 = document.getElementById("card2").value;
+        let card3 = document.getElementById("card3").value;
+        
+        if (card1 == "" && card2 == "" && card3 == "" ) {
+            alert("Please fill all the fields");
+        }
+        else {
+            alert("Registration Successful");
+            window.location.href= "Signin.html";
+        }
+    });
+</script>
+</html>

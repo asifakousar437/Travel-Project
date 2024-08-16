@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Backup</title>
+    <link rel="stylesheet" href="TSlider.css">
+    <link rel="stylesheet" href="na.css">
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        .sidenav{
+            display:none;
+        }
+        .header{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            height:80px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+            z-index: 1000;
+        }
+        .left-section{
+            margin-left:30px;
+        }
+        .left-section h1{
+            font-size:30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .left-section span{
+            color:green;
+        }
+        .right-section{
+            margin-right:30px;
+            display:flex;
+            gap:80px;
+        }
+        .right-section a{
+            text-decoration: none;
+            color:black;
+            font-size:20px;
+        }
+        .right-section .btn{
+            border:none;
+            padding:8px 30px 8px 30px;
+            border-radius: 20px;
+            margin-top:-8px;
+            background-color: green;
+            color:white;
+            cursor: pointer;
+        }
+        .right-section .btn:hover{
+            border:1px solid green;
+            color:green;
+            background-color: whitesmoke;
+        }
+
+        .text h1{
+            text-transform: uppercase;
+        }
+
+        .about-container{
+            margin-top:10%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            width:90%;
+            font-size:18px;
+            padding:10px;
+            text-align: left;
+            border-radius:5px;
+            margin-left:4%;
+        }
+    
+        footer{
+            width:101.1%;
+            height:65vh;
+            margin-left:-0.6%;
+            margin-top:20%;
+            background-color: rgba(0, 0, 0, 0.911);
+            margin-bottom:-10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .footer{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .first-section{
+            margin-left:10%;
+            margin-top:10%;
+            color:white;
+        }
+        .first-section h1{
+            font-size:30px;
+            text-transform: uppercase;
+        }
+        .first-section h3{
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+        .second-section{
+            margin-top:10%;
+        }
+        .second-section h3{
+            font-size: 20px;
+            color:white;
+            text-transform: capitalize;
+        }
+        .second-section a{
+            display:flex;
+            flex-direction:column;
+            margin-bottom: 2%;
+            font-size: 20px;
+            margin-left:2%;
+            text-decoration: none;
+            color:gray;
+            cursor: pointer;
+        }
+        .third-section{
+            margin-top:10%;
+        }
+        .third-section h3{
+            font-size:20px;
+            color:white;
+            text-transform: capitalize;
+        }
+        .third-section div{
+            font-size:20px;
+            color:gray;
+            margin-bottom:5%;
+        }
+        .fourth-section{
+            margin-top:10%;
+        }
+        .flex{
+            display:flex;
+        }
+        .fourth-section h3{
+            font-size:20px;
+            color:white;
+            text-transform: capitalize;
+        }
+        .fourth-section input{
+            height:36px;
+            width:250px;
+        }
+        .fourth-section input::placeholder{
+            font-size: 18px;
+        }
+        .fourth-section button{
+            height:41px;
+            width:80px;
+            font-size: 18px;
+            text-transform: capitalize;
+            background-color: green;
+            color:white;
+            border:none;
+            cursor: pointer;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        footer .end{
+            margin-left:20px;
+            color:gray;
+            font-size: 20px;
+            margin-top:1.5%;
+        }
+        footer hr{
+            border:1px solid rgba(128, 128, 128, 0.559);
+            margin-top:10%;
+        }
+
+        @media screen and (max-width:1200px){
+            .sidenav div .btn{
+                border:none;
+                background-color: green;
+                color:white;
+                cursor: pointer;
+            }
+            .right-section{
+                display:none;
+            }
+            .sidenav {
+                display:block;
+                height:800%;
+                width: 450px;
+                position: absolute;
+                z-index: 1;
+                top:80px;
+                right:-500px;
+                background-color:whitesmoke;
+                overflow-x: hidden;
+                padding-top: 20px;
+                border-radius: 0px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            /* Style the sidenav links and the dropdown button */
+            .sidenav a{
+                padding: 6px 8px 6px 16px;
+                margin-bottom:15px;
+                text-decoration: none;
+                font-size: 20px;
+                color: black;
+                display: block;
+                border: none;
+                background: none;
+                width:100%;
+                text-align: left;
+                cursor: pointer;
+                outline: none;
+            }
+
+            /* On mouse-over */
+            .sidenav a:hover{
+                color: black;
+                background-color: rgba(128, 128, 128, 0.223);
+                border-radius: 5px;
+            }
+            .sidenav.active{
+                right:0;
+                background-color:whitesmoke;
+                color: black;
+            }
+            .lines.open #bar1{
+                background-color: gray;
+                transform: rotate(45deg) translate(6px, 5px);
+            }
+            .lines.open #bar2{
+                background-color: transparent;
+            }
+            .lines.open #bar3{
+                background-color: gray;
+                transform: rotate(-45deg) translate(6px, -5px);
+            }
+            .lines, .bar{
+                position:fixed;
+            }
+            .lines{
+                display:block;
+                top:0.5%;
+                left:92%;
+                right:0px;
+                width:30px;
+                height:30px;
+                transform: translateY(50%);
+                border:0;
+                background: 0 0;
+                margin-right:10px;
+                cursor: pointer;
+            }
+            .bar{
+                top:8px;
+                background: gray;
+                width:100%;
+                height:4px;
+                transition: all .3s ease-in;
+                right:0px;
+            }
+            #bar2{
+                top:16px;
+            }
+            #bar3{
+                top:24px;
+            }
+        }
+        @media screen and (max-width:500px){
+            .sidenav{
+                width:375px;
+                border-radius: 0px;
+            }
+
+            footer{
+                height:130vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+
+        @media (min-width:501px) and (max-width:600px){
+            .sidenav{
+                width:450px;
+                border-radius: 0px;
+            }
+
+            footer{
+                height:138vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+
+        @media (min-width:601px) and (max-width:800px){
+            .sidenav{
+                width:450px;
+                border-radius: 0px;
+            }
+
+            footer{
+                height:160vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+
+        @media (min-width:801px) and (max-width:1000px){
+            .sidenav{
+                width:450px;
+                border-radius: 0px;
+            }
+
+            footer{
+                height:90vh;
+                margin-left:-9px;
+            }
+            .footer{
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .second-section, .third-section, .fourth-section{
+                margin-left:10%;
+            }
+            footer .end{
+                margin-top:5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="left-section">
+                <h1>travel<span>er</span></h1>
+            </div>
+            <div class="right-section">
+                <a href="Homebackup.html">Home</a>
+                <a href="Aboutbackup.html">About</a>
+                <a href="Servicesbackup.html">Services</a>
+                <a href="Packagesbackup.html">Packages</a>
+                <a href="Reviewbackup.html">Review</a>
+                <a href="Register.html" class="btn">Register</a>
+            </div>
+            <div class="sidenav">
+                <button class="lines" onclick="show()">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                </button>
+                <div>
+                    <a href="Homebackup.html">Home</a>
+                    <a href="Aboutbackup.html">About</a>
+                    <a href="Servicesbackup.html">Services</a>
+                    <a href="Packagesbackup.html">Tour Packages</a>
+                    <a href="Reviewbackup.html">Review</a>
+                    <a href="Register.html" class="btn">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="slideshow-container">
+            <div class="items mySlides fade">
+                <img src="Img/carousel-1.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>About</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+            <div class="items mySlides fade">
+                <img src="Img/pexels-quang-nguyen-vinh-2166711.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>About</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+      
+            <div class="items mySlides fade">
+                <img src="Img/pexels-pedro-slinger-14743568.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>About</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+            <div class="items mySlides fade">
+                <img src="Img/pexels-aleksandar-pasaric-2341830.jpg"/>
+                <div class="text">
+                    <h2>Tours & Travel</h2>
+                    <h1>About</h1>
+                    <button onclick="booking()">Book Now</button>
+                </div>
+            </div>
+            <a class="prev" onclick="prev()">&#10094;</a>
+            <a class="next" onclick="next()">&#10095;</a>
+        </div>
+        <div class="about-container">
+            <div class="about-1">
+                <h1>About Us</h1>
+                <p class="para-1">Since 2015, Traveler has been committed to bringing travelers the best in 
+                    value and quality travel arrangements. We are passionate about travel and providing 
+                    corporate travelers high-touch services to facilitate their business travel needs 
+                    and sharing the world's wonders on the leisure travel side.
+                </p>
+                <p class="para-2">
+                    <h3>Profile</h3>
+                    <p>Traveler is the largest independently owned travel agency headquarted in California,
+                        and consistently ranked among the top 50 largest in the United States.</p>
+                    </p>
+                <p class="para-3">
+                    <h3>Our Mission Statement</h3>
+                    <p>"We are employee-owned company with a passion for providing exemplary customer service, leveraging our expertise and technology to deliver innovative travel solutions in a gratifying work environment."</p>
+                </p>
+            </div>
+            <div class="about-2">
+                <h1>What Makes Us Different</h1>
+                <div>
+                    <div>
+                        <h3>Employee-Owned</h3>
+                        <p>We are unique being an employee-owned travel agency, with a high bar for our integrity and dedication to customer service. Our strong company culture is anchored  by our mission and values.</p>
+                    </div>
+                    <div>
+                        <h3>Award-Winning</h3>
+                        <p>Our award-winning company consistently ranks among the best agencies in the country (Travel Weekly, Business Travel Weekly). Our passion for our profession has resulted in being named multiple years as one of the "Best Places To Work" in Los Angeles County and Sacramento.</p>
+                    </div>
+                    <div>
+                        <h3>Engaged</h3>
+                        <p>Our management team is active on various travel advisory boards and committees for travel organizations like ASTA, travel magazines (Afar, Travel+Leisure), major hotel brands, and airlines. We are engaged with our industry and our opinions continue to be sought across the broad spectrum of our industry. Meet our key Executive Team.</p>
+                    </div>
+                    <div>
+                        <h3>Connected</h3>
+                        <p>TravelStore is a top member of the prestigious Signature Travel Network, a highly regarded worldwide partnership allowing us to provide our customers unmatched benefits and additional value when you travel. We are a Premium Member of ASTA (American Society of Travel Advisors), CLIA (Cruise Line International Association) and an affiliate of BCD Travel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div class="first-section">
+                <h1>traveler</h1>
+                <h3>follow us</h3>
+            </div>
+            <div class="second-section">
+                <h3>useful links</h3>
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Services</a>
+                <a href="">Packages</a>
+                <a href="">Contact</a>
+            </div>
+            <div class="third-section">
+                <h3>Contact Us</h3>
+                <div>123 Street, New York, USA</div>
+                <div>+012 345 67890</div>
+                <div>traveler@gmail.com</div>
+            </div>
+            <div class="fourth-section">
+                <h3>newsletter</h3>
+                <div class="flex">
+                    <input type="email" placeholder="Your Email">
+                    <button>signup</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="end">Copyright © Domain. All Rights Reserved.</div>
+    </footer>
+</body>
+<script>
+    function show(){
+        document.querySelector('.lines').classList.toggle('open')
+        document.querySelector('.sidenav').classList.toggle('active')
+    }
+    function booking(){
+        window.location.href = "Booknow.html";
+    }
+</script>
+<script src="TSlider.js"></script>
+<script src="na.js"></script>
+</html>

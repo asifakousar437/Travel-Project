@@ -1,0 +1,5 @@
+.right-section a:is(:link, :active, :visited).active{
+    border-bottom:2px solid green;
+    padding-bottom: 1%;
+    color:green;
+}
